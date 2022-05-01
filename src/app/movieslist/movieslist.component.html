@@ -1,0 +1,40 @@
+<input (keyup)="onChange($event)" name="search" placeholder="Search" />
+
+
+
+
+
+<span>Top Rated</span>
+<mat-grid-list cols="3" rowHeight="200px" [gutterSize]="'15px'" mat-line="2">
+    <mat-grid-tile *ngFor="let movie of topratedService.toprated | slice:0:3">
+        <a (click)="linkClick(movie.id)">
+
+
+            <img src="{{imageApis}}{{movie.poster_path}}" alt="">
+
+
+        </a>
+    </mat-grid-tile>
+</mat-grid-list>
+
+
+<span>Latest</span>
+<mat-grid-list cols="{{maxcolumns}}" rowHeight="200px" [gutterSize]="'15px'" mat-line="2">
+
+    <mat-grid-tile *ngFor="let movie of searchmovies">
+        <a (click)="linkClick(movie.id)">
+
+
+            <img src="{{imageApis}}{{movie.poster_path}}" alt="">
+
+
+        </a>
+    </mat-grid-tile>
+</mat-grid-list>
+
+
+
+
+<mat-paginator [length]="this.pages.paginatorLength" [pageSize]="this.pages.pageSize" (page)="handlePage($event)"
+    aria-label="Select page">
+</mat-paginator>

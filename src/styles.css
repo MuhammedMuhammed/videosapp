@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+.mat-grid-tile-content{
+    display: block!important;
+
+}
+
+body,html{
+    background: linear-gradient(245deg,rgba(0,0,0,1) 0%, rgba(203,115,93,1) 100%, rgba(0,236,255,1) 100%);
+    width: 100%;
+    height: fit-content;
+}
+.mat-paginator-container {
+    color: wheat;
+}
